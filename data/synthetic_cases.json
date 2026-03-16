@@ -1,0 +1,378 @@
+[
+  {
+    "scenario_name": "Empty Box - Gaming Console",
+    "ground_truth": "EMPTY_BOX",
+    "order_id": "ORD-2026-001",
+    "account": {
+      "account_id": "ACCT-7821",
+      "account_age_days": 45,
+      "total_orders": 12,
+      "total_returns": 5,
+      "return_rate": 0.42,
+      "high_value_return_rate": 0.60,
+      "linked_addresses": ["123 Main St", "456 Elm St", "789 Oak Ave"],
+      "linked_payment_methods": 2,
+      "previous_fraud_flags": 1,
+      "category_return_concentration": {"Consumer Electronics": 0.80, "Books": 0.20}
+    },
+    "item": {
+      "asin": "B0D1XD1ZV3",
+      "title": "PlayStation 5 Digital Edition Console",
+      "category": "Gaming Consoles",
+      "price": 449.99,
+      "serial_number": "PS5-2026-ABX9912",
+      "weight_grams": 3900
+    },
+    "return_reason": "Item arrived damaged",
+    "return_submitted_at": "2026-03-01T10:30:00Z",
+    "order_delivered_at": "2026-02-28T14:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-28T14:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z999AA10123456784",
+        "weight_grams": 4500,
+        "location": "Front Door"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-03-03T09:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z999AA10123456799",
+        "weight_grams": 950,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_001.jpg"],
+    "customer_message": "The box was damaged when it arrived. I want a full refund."
+  },
+  {
+    "scenario_name": "Counterfeit Swap - Laptop",
+    "ground_truth": "COUNTERFEIT_SWAP",
+    "order_id": "ORD-2026-002",
+    "account": {
+      "account_id": "ACCT-3344",
+      "account_age_days": 180,
+      "total_orders": 28,
+      "total_returns": 8,
+      "return_rate": 0.29,
+      "high_value_return_rate": 0.38,
+      "linked_addresses": ["100 Tech Blvd"],
+      "linked_payment_methods": 1,
+      "previous_fraud_flags": 0,
+      "category_return_concentration": {"Consumer Electronics": 0.75, "Home": 0.25}
+    },
+    "item": {
+      "asin": "B0DCSRPG5Q",
+      "title": "Apple MacBook Air 15-inch M3 Chip 256GB",
+      "category": "Laptops",
+      "price": 1299.00,
+      "serial_number": "FVFXM3Q2024A",
+      "weight_grams": 1510
+    },
+    "return_reason": "Item not as described",
+    "return_submitted_at": "2026-02-25T16:45:00Z",
+    "order_delivered_at": "2026-02-20T11:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-20T11:00:00Z",
+        "carrier": "AMZL",
+        "tracking_id": "TBA123456789000",
+        "weight_grams": 2100,
+        "location": "Mailroom"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-02-28T10:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z888BB20234567890",
+        "weight_grams": 2050,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_002a.jpg", "return_img_002b.jpg"],
+    "customer_message": "This is not the laptop I ordered. The screen quality is different."
+  },
+  {
+    "scenario_name": "Serial Mismatch - Camera",
+    "ground_truth": "SERIAL_MISMATCH",
+    "order_id": "ORD-2026-003",
+    "account": {
+      "account_id": "ACCT-5590",
+      "account_age_days": 90,
+      "total_orders": 15,
+      "total_returns": 6,
+      "return_rate": 0.40,
+      "high_value_return_rate": 0.50,
+      "linked_addresses": ["200 Photo Lane", "201 Photo Lane"],
+      "linked_payment_methods": 3,
+      "previous_fraud_flags": 2,
+      "category_return_concentration": {"Consumer Electronics": 0.90, "Other": 0.10}
+    },
+    "item": {
+      "asin": "B0BZV3RT63",
+      "title": "Sony Alpha a7 IV Full-Frame Mirrorless Camera",
+      "category": "Cameras",
+      "price": 2498.00,
+      "serial_number": "SN-SONY-A7IV-88201",
+      "weight_grams": 658
+    },
+    "return_reason": "Changed my mind",
+    "return_submitted_at": "2026-02-22T08:15:00Z",
+    "order_delivered_at": "2026-02-21T17:30:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-21T17:30:00Z",
+        "carrier": "FedEx",
+        "tracking_id": "794644790120",
+        "weight_grams": 1200,
+        "location": "Signed"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-02-25T14:00:00Z",
+        "carrier": "FedEx",
+        "tracking_id": "794644790155",
+        "weight_grams": 1180,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_003.jpg"],
+    "customer_message": "I decided to go with a different camera system."
+  },
+  {
+    "scenario_name": "Policy Gaming - Headphones",
+    "ground_truth": "POLICY_GAMING",
+    "order_id": "ORD-2026-004",
+    "account": {
+      "account_id": "ACCT-1122",
+      "account_age_days": 365,
+      "total_orders": 50,
+      "total_returns": 22,
+      "return_rate": 0.44,
+      "high_value_return_rate": 0.18,
+      "linked_addresses": ["500 Repeat Road"],
+      "linked_payment_methods": 1,
+      "previous_fraud_flags": 0,
+      "category_return_concentration": {"Consumer Electronics": 0.55, "Clothing": 0.30, "Home": 0.15}
+    },
+    "item": {
+      "asin": "B0D1XH67MR",
+      "title": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+      "category": "Audio Equipment",
+      "price": 348.00,
+      "serial_number": "SN-SONY-XM5-44102",
+      "weight_grams": 250
+    },
+    "return_reason": "Item defective or doesn't work",
+    "return_submitted_at": "2026-03-01T20:00:00Z",
+    "order_delivered_at": "2026-02-05T10:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-05T10:00:00Z",
+        "carrier": "AMZL",
+        "tracking_id": "TBA234567890111",
+        "weight_grams": 600,
+        "location": "Front Door"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-03-04T11:00:00Z",
+        "carrier": "USPS",
+        "tracking_id": "9400111899223100456",
+        "weight_grams": 590,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": [],
+    "customer_message": "Noise cancelling stopped working after a few weeks."
+  },
+  {
+    "scenario_name": "Legitimate Return - Tablet",
+    "ground_truth": "LEGITIMATE",
+    "order_id": "ORD-2026-005",
+    "account": {
+      "account_id": "ACCT-9900",
+      "account_age_days": 1200,
+      "total_orders": 150,
+      "total_returns": 8,
+      "return_rate": 0.05,
+      "high_value_return_rate": 0.02,
+      "linked_addresses": ["300 Loyal Customer Ave"],
+      "linked_payment_methods": 1,
+      "previous_fraud_flags": 0,
+      "category_return_concentration": {"Books": 0.50, "Consumer Electronics": 0.25, "Home": 0.25}
+    },
+    "item": {
+      "asin": "B0D5C5K1X9",
+      "title": "Samsung Galaxy Tab S9 FE 10.9-inch 128GB",
+      "category": "Tablets",
+      "price": 349.99,
+      "serial_number": "SN-SAMG-S9FE-77430",
+      "weight_grams": 523
+    },
+    "return_reason": "Item defective or doesn't work",
+    "return_submitted_at": "2026-02-28T12:00:00Z",
+    "order_delivered_at": "2026-02-22T15:30:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-22T15:30:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z777CC30345678901",
+        "weight_grams": 900,
+        "location": "Front Door"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-03-02T09:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z777CC30345678999",
+        "weight_grams": 890,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_005a.jpg", "return_img_005b.jpg"],
+    "customer_message": "The tablet screen has a dead pixel area in the lower right corner. Appeared after 3 days of use."
+  },
+  {
+    "scenario_name": "Multi-Account Abuse - Smartphone",
+    "ground_truth": "MULTI_ACCOUNT",
+    "order_id": "ORD-2026-006",
+    "account": {
+      "account_id": "ACCT-6601",
+      "account_age_days": 60,
+      "total_orders": 8,
+      "total_returns": 5,
+      "return_rate": 0.63,
+      "high_value_return_rate": 0.80,
+      "linked_addresses": ["777 Fraud Circle Apt 1", "777 Fraud Circle Apt 2", "777 Fraud Circle Apt 3", "778 Fraud Circle"],
+      "linked_payment_methods": 4,
+      "previous_fraud_flags": 3,
+      "category_return_concentration": {"Consumer Electronics": 0.95, "Other": 0.05}
+    },
+    "item": {
+      "asin": "B0DGHQ3QG7",
+      "title": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
+      "category": "Smartphones",
+      "price": 1199.00,
+      "serial_number": "SN-APPL-15PM-92381",
+      "weight_grams": 221
+    },
+    "return_reason": "Item arrived damaged",
+    "return_submitted_at": "2026-02-27T06:00:00Z",
+    "order_delivered_at": "2026-02-26T18:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-26T18:00:00Z",
+        "carrier": "AMZL",
+        "tracking_id": "TBA345678901222",
+        "weight_grams": 500,
+        "location": "Handed to resident"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-03-01T08:00:00Z",
+        "carrier": "USPS",
+        "tracking_id": "9400111899223100789",
+        "weight_grams": 480,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_006.jpg"],
+    "customer_message": "Phone screen was cracked on arrival."
+  },
+  {
+    "scenario_name": "INR Fraud - Earbuds",
+    "ground_truth": "INR_FRAUD",
+    "order_id": "ORD-2026-007",
+    "account": {
+      "account_id": "ACCT-4455",
+      "account_age_days": 120,
+      "total_orders": 20,
+      "total_returns": 7,
+      "return_rate": 0.35,
+      "high_value_return_rate": 0.29,
+      "linked_addresses": ["400 Claim Ave", "401 Claim Ave"],
+      "linked_payment_methods": 2,
+      "previous_fraud_flags": 1,
+      "category_return_concentration": {"Consumer Electronics": 0.70, "Clothing": 0.30}
+    },
+    "item": {
+      "asin": "B0D1XK0ZRN",
+      "title": "Apple AirPods Pro 2nd Gen with USB-C",
+      "category": "Audio Equipment",
+      "price": 249.00,
+      "serial_number": "SN-APPL-APP2-55103",
+      "weight_grams": 50.8
+    },
+    "return_reason": "Item not received",
+    "return_submitted_at": "2026-02-26T14:30:00Z",
+    "order_delivered_at": "2026-02-25T16:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-25T16:00:00Z",
+        "carrier": "AMZL",
+        "tracking_id": "TBA456789012333",
+        "weight_grams": 250,
+        "location": "Handed to resident"
+      }
+    ],
+    "return_images": [],
+    "customer_message": "I never received this order. The tracking says delivered but nothing was at my door."
+  },
+  {
+    "scenario_name": "Legitimate Return - Used Keyboard",
+    "ground_truth": "LEGITIMATE",
+    "order_id": "ORD-2026-008",
+    "account": {
+      "account_id": "ACCT-8800",
+      "account_age_days": 2000,
+      "total_orders": 300,
+      "total_returns": 12,
+      "return_rate": 0.04,
+      "high_value_return_rate": 0.01,
+      "linked_addresses": ["600 Trusty Lane"],
+      "linked_payment_methods": 1,
+      "previous_fraud_flags": 0,
+      "category_return_concentration": {"Home": 0.40, "Consumer Electronics": 0.30, "Books": 0.30}
+    },
+    "item": {
+      "asin": "B09HMP1SMP",
+      "title": "Logitech MX Keys S Wireless Keyboard",
+      "category": "Computer Accessories",
+      "price": 109.99,
+      "serial_number": "SN-LOGI-MXKS-23901",
+      "weight_grams": 810
+    },
+    "return_reason": "Item defective or doesn't work",
+    "return_submitted_at": "2026-02-27T09:00:00Z",
+    "order_delivered_at": "2026-02-20T12:00:00Z",
+    "shipment_events": [
+      {
+        "event_type": "delivered",
+        "timestamp": "2026-02-20T12:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z666DD40456789012",
+        "weight_grams": 1100,
+        "location": "Front Door"
+      },
+      {
+        "event_type": "return_received",
+        "timestamp": "2026-03-01T10:00:00Z",
+        "carrier": "UPS",
+        "tracking_id": "1Z666DD40456789099",
+        "weight_grams": 1090,
+        "location": "Amazon FC"
+      }
+    ],
+    "return_images": ["return_img_008a.jpg", "return_img_008b.jpg", "return_img_008c.jpg"],
+    "customer_message": "Several keys stopped responding after 5 days. Tried resetting Bluetooth multiple times. Keys Q, W, and E are unresponsive."
+  }
+]

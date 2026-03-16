@@ -1,0 +1,59 @@
+# Return Policy Rules & Decision Thresholds
+
+risk_thresholds:
+  low:
+    range: [0.0, 0.3]
+    action: "auto_approve"
+    description: "Return approved automatically, no review needed"
+
+  medium:
+    range: [0.3, 0.6]
+    action: "enhanced_verification"
+    description: "Request additional evidence (photos, serial verification)"
+
+  high:
+    range: [0.6, 0.85]
+    action: "manual_review"
+    description: "Route to human reviewer with full case summary"
+
+  critical:
+    range: [0.85, 1.0]
+    action: "deny_with_rationale"
+    description: "Deny return with transparent explanation and appeal path"
+
+behavioral_signals:
+  account_age_weight: 0.15
+  return_frequency_weight: 0.25
+  category_concentration_weight: 0.20
+  value_pattern_weight: 0.20
+  timing_pattern_weight: 0.10
+  address_cluster_weight: 0.10
+
+  thresholds:
+    max_return_rate_30d: 0.40
+    max_high_value_return_rate: 0.30
+    suspicious_return_window_hours: 48
+    min_account_age_days: 30
+
+evidence_rules:
+  serial_number:
+    required_for_value_above: 100.00
+    mismatch_risk_boost: 0.50
+
+  weight_check:
+    tolerance_percent: 5.0
+    empty_box_threshold_percent: 30.0
+
+  packaging:
+    tamper_evidence_required: true
+    photo_required_for_value_above: 50.00
+
+  multimodal:
+    image_similarity_threshold: 0.85
+    embedding_distance_anomaly: 0.70
+
+escalation_rules:
+  auto_escalate_above_value: 500.00
+  require_supervisor_above_value: 2000.00
+  max_auto_deny_value: 200.00
+  always_human_for_first_time_buyer: true

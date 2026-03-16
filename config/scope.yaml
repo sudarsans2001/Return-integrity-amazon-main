@@ -1,0 +1,116 @@
+# ReturnShield AI - Domain Scope & Success Metrics
+# Hackathon: Amazon Nova AI Hackathon 2026
+
+project:
+  name: "ReturnShield AI"
+  track: "Agentic AI"
+  tagline: >
+    A multi-agent system powered by Amazon Nova that detects return fraud,
+    counterfeit swaps, and policy abuse in near real-time while preserving
+    legitimate customer experience.
+
+domain_scope:
+  # Focus on high-value electronics where return fraud is most impactful
+  primary_category: "Consumer Electronics"
+  sub_categories:
+    - "Smartphones & Accessories"
+    - "Laptops & Tablets"
+    - "Gaming Consoles & Games"
+    - "Audio Equipment"
+    - "Cameras & Photography"
+  rationale: >
+    Electronics represent the highest fraud-loss category for Amazon sellers.
+    Serial numbers, packaging details, and weight data provide rich multimodal
+    signals for evidence-based fraud detection.
+
+fraud_taxonomy:
+  - id: "EMPTY_BOX"
+    label: "Empty Box Return"
+    description: "Customer returns an empty or near-empty package"
+    severity: "critical"
+
+  - id: "COUNTERFEIT_SWAP"
+    label: "Counterfeit Item Swap"
+    description: "Customer swaps genuine item with a counterfeit or different product"
+    severity: "critical"
+
+  - id: "USED_AS_NEW"
+    label: "Used-as-New Return"
+    description: "Customer uses product extensively then returns as defective"
+    severity: "high"
+
+  - id: "SERIAL_MISMATCH"
+    label: "Serial Number Mismatch"
+    description: "Returned item serial does not match shipped item serial"
+    severity: "critical"
+
+  - id: "POLICY_GAMING"
+    label: "Return Policy Gaming"
+    description: "Customer exploits return windows, free replacement loops, or refund-first policies"
+    severity: "medium"
+
+  - id: "MULTI_ACCOUNT"
+    label: "Multi-Account Abuse"
+    description: "Coordinated fraud across linked accounts sharing addresses or payment methods"
+    severity: "high"
+
+  - id: "INR_FRAUD"
+    label: "Item Not Received Fraud"
+    description: "Customer falsely claims item was not received despite delivery confirmation"
+    severity: "high"
+
+success_metrics:
+  primary_kpis:
+    fraud_detection_precision:
+      target: 0.92
+      unit: "ratio"
+      description: "Proportion of flagged returns that are actual fraud"
+
+    fraud_detection_recall:
+      target: 0.88
+      unit: "ratio"
+      description: "Proportion of actual fraud cases detected"
+
+    false_positive_rate:
+      target: 0.05
+      unit: "ratio"
+      description: "Legitimate returns incorrectly flagged (must stay low for CX)"
+
+    mean_decision_latency:
+      target: 8.0
+      unit: "seconds"
+      description: "Average time from return submission to risk assessment"
+
+  business_impact_kpis:
+    estimated_loss_prevention:
+      target: 73
+      unit: "percent"
+      description: "Percentage of fraud losses prevented vs baseline"
+
+    reviewer_time_saved:
+      target: 60
+      unit: "percent"
+      description: "Reduction in manual review time per case"
+
+    customer_satisfaction_preserved:
+      target: 0.95
+      unit: "ratio"
+      description: "Legitimate returns processed without friction"
+
+nova_integration:
+  models:
+    - service: "Amazon Bedrock"
+      model: "amazon.nova-lite-v2"
+      role: "Orchestration, structured reasoning, decision synthesis"
+
+    - service: "Amazon Bedrock"
+      model: "amazon.nova-embed-multimodal-v1"
+      role: "Cross-modal evidence matching and anomaly retrieval"
+
+    - service: "Amazon Bedrock"
+      model: "amazon.nova-sonic-v1"
+      role: "Voice-based escalation for operations command center"
+
+  optional:
+    - service: "Nova Act"
+      role: "Automated UI workflows in seller/reviewer tooling"
