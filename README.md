@@ -230,11 +230,6 @@ returnshield-ai/
 └── README.md
 ```
 
----
-
-## License
-
-MIT
 
 ---
 
